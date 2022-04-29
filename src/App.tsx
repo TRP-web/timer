@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC, useState } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Main from './Page/Main';
+import { timerStatus } from './types/types';
+import TestPage from './Page/ReversTime';
+import Layout from './components/Layout';
 
-function App() {
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="/revers-timer" element={<TestPage />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

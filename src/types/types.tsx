@@ -1,0 +1,1 @@
+export type timerStatus = "start" | "stop" | "sub"
