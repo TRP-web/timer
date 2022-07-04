@@ -30,7 +30,7 @@ const ReversTimer: React.FC = () => {
 
     const secondsHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         let newValue: string = e.target.value.replace(/[^0-9]/g, "")
-        setInputsTime({minuts: inputsTime.minuts, seconds:newValue})
+        setInputsTime({ minuts: inputsTime.minuts, seconds: newValue })
     }
 
     const calcMs = (minuts: number, seconds: number = 0): number => {
@@ -89,7 +89,6 @@ const ReversTimer: React.FC = () => {
                 placeholder="seconds for timer"
                 onChange={(e) => secondsHandler(e)}
             />
-            {date}
             <Time ms={date} />
         </div>
     )
